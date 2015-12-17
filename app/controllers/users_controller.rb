@@ -1,4 +1,5 @@
 
+
 ##INDEX
 get '/users' do
 	# @users = User.all
@@ -27,7 +28,7 @@ end
 
 ##SHOW
 get '/users/:id' do
-	redirect '/users' unless current_user && authorized?
+	redirect '/users' unless current_user && authorized? 
 	@user = User.find(params[:id])
 	erb :'/users/show'
 end
