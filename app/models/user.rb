@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :boards
-  has_many :clues, through: :boards
+  has_many :sets
+  has_many :clues, through: :sets
 
   def password
   	@password ||= BCrypt::Password.new(password_hash)

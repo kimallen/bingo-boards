@@ -1,14 +1,13 @@
 require 'Faker'
 
-20.times do
+1.times do
   User.create(email: Faker::Internet.email, password: "123", name: Faker::Name.name)
 end
 
-# Examples:
-# 50.times do
-#   Post.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user_id: rand(1..20))
-# end
+2.times do
+  Set.create(name: Faker::Commerce.product_name, theme: Faker::Team.creature, user_id: rand(1..5))
+end
 
-# 50.times do
-#   Comment.create(content: Faker::Lorem.paragraph, user_id: rand(1..20), post_id: rand(1..100))
-# end
+80.times do
+  Clues.create(text: Faker::Lorem.paragraph, user_id: rand(1..20), set_id: rand(1..2))
+end

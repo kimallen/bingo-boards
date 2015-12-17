@@ -3,7 +3,7 @@ class CreateClues < ActiveRecord::Migration
     create_table :clues do |t|
       t.string :text
       t.integer :pt_value
-      t.references :board
+      t.references :set
       t.references :user
       t.timestamps
   end

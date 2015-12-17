@@ -1,6 +1,6 @@
-class CreateBoards < ActiveRecord::Migration
+class CreateSet < ActiveRecord::Migration
   def change
-    create_table :boards do |t|
+    create_table :sets do |t|
       t.string :name
       t.string :theme
       t.references :user
