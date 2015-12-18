@@ -1,4 +1,4 @@
 class Clue < ActiveRecord::Base
-  belongs_to :set
+  belongs_to :game
 
 end

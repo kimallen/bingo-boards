@@ -1,6 +1,6 @@
-class CreateSet < ActiveRecord::Migration
+class CreateGames < ActiveRecord::Migration
   def change
-    create_table :sets do |t|
+    create_table :games do |t|
       t.string :name
       t.string :theme
       t.references :user
