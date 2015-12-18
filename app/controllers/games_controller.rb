@@ -5,10 +5,11 @@ end
 
 #SHOW FORM
 get '/games/new' do
-
+  erb :'games/new'
 end
 #CREATE
 post '/games' do
+  @game = Game.new(params[:game])
 
 end
 
