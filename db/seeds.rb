@@ -5,9 +5,9 @@ require 'Faker'
 end
 
 2.times do
-  Game.create(name: Faker::Commerce.product_name, theme: Faker::Team.creature, user_id: rand(1..5))
+  Game.create(name: Faker::Commerce.product_name, theme: Faker::Team.creature, user_id: 1)
 end
 
 80.times do
-  Clue.create(text: Faker::Lorem.paragraph, user_id: rand(1..20), set_id: rand(1..2))
+  Clue.create(text: Faker::Lorem.paragraph, user_id: 1, game_id: rand(1..2))
 end
