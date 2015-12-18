@@ -42,10 +42,6 @@ end
 ##UPDATE
 put '/users/:id' do
 	@user = User.find(params[:id])
-p '************'
-	p @user
-	p params
-p '************'
 	@user.update(params[:user])
 	erb :'/users/show'
 end

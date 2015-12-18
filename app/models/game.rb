@@ -1,6 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :clues
   belongs_to :user
+  has_and_belongs_to :rounds
 
 
   # takes in an array of clues
