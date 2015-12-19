@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :clues
   belongs_to :user
-  has_and_belongs_to :rounds
+  has_and_belongs_to_many :rounds
 
 
   # takes in an array of clues
@@ -16,9 +16,9 @@ class Game < ActiveRecord::Base
       else
         remaining = 25 % clues.length
         if remaining == 0
-          generate_board(clues * 25/clues.length)
+          generate_board(clues * 25.div(clues.length))
         else
-          generate_board(clues + clues[0.. .remaining])
+          generate_board(clues + clues[0...remaining])
         end
       end
     end
