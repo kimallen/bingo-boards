@@ -6,19 +6,19 @@ class Game < ActiveRecord::Base
 
   # takes in an array of clues
   # if there are less than 25 clues
-  def generate_board(clues)
+  def generate_board(board_size, clues)
     clues.shuffle!
-    if clues.length == 25
+    if clues.length == board_size
       return clues
     else
-      if clues.length > 25
-        return clues[0...25]
+      if clues.length > board_size
+        return clues[0...board_size]
       else
-        remaining = 25 % clues.length
+        remaining = board_size % clues.length
         if remaining == 0
-          generate_board(clues * 25.div(clues.length))
+          generate_board(board_size, clues * board_size.div(clues.length))
         else
-          generate_board(clues + clues[0...remaining])
+          generate_board(board_size, clues + clues[0...remaining])
         end
       end
     end
