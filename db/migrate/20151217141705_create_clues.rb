@@ -3,8 +3,9 @@ class CreateClues < ActiveRecord::Migration
     create_table :clues do |t|
       t.string :text
       t.integer :pt_value
-      t.references :board
-      t.references :user
+      t.references :game
+      # t.references :user
       t.timestamps
+    end
   end
 end
