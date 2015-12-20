@@ -1,4 +1,4 @@
-get '/games/:id/boards' do
+get '/games/:id/sample-board' do
 	@game = Game.find_by(id: params[:id])
 	p @board = @game.generate_board(@game.clues)
 	@width = 5

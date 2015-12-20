@@ -15,7 +15,7 @@ num_games.times do
 end
 
 80.times do
-  Clue.create(text: Faker::Lorem.paragraph, pt_value: rand(1..4), game_id: rand(1..num_games))
+  Clue.create(text: Faker::Lorem.sentence, pt_value: rand(1..4), game_id: rand(1..num_games))
 end
 
 num_players.times do
