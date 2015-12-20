@@ -1,13 +1,13 @@
 class Game < ActiveRecord::Base
   has_many :clues
   belongs_to :user
-  has_and_belongs_to_many :rounds
+  has_many :rounds
 
 
   # takes in an array of clues
   # if there are less than 25 clues
-  def generate_board(board_size, clues)
-    clues.shuffle!
+  def generate_board(board_size = 25, clues)
+    clues = clues.shuffle
     if clues.length == board_size
       return clues
     else

@@ -1,3 +1,4 @@
 class Player < ActiveRecord::Base
-  has_and_belongs_to :rounds
+  has_many :player_rounds
+  has_many :rounds, through: :player_rounds
 end

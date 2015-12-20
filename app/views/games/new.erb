@@ -1,0 +1,19 @@
+<form action="/games" method="post">
+	<input type="hidden" name="user_id" value="<%=current_user.id%>">
+	<label>Game Name</label><input type="text" name="name" placeholder="Game Name"><br>
+	<label>Theme</label><input type="text" name="theme" placeholder="Theme"><br>
+	<input type="submit" value="Submit New Game">
+</form>
+
+<h5>Now add your clues</h5>
+	<form action"">
+		<label>Clue:</label><input type="text" name="text" placeholder="Your clue here">
+		<label>Weighted Value:</label>
+		<select name="pt_value">
+		  <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		</select>
+		<input type="submit" value="Add clue">
+	</form>

@@ -1,4 +1,5 @@
 class Round < ActiveRecord::Base
-  has_and_belongs_to_many :games
-  has_and_belongs_to_many :players
+  belongs_to :game
+  has_many :player_rounds
+  has_many :players, through: :player_rounds
 end
