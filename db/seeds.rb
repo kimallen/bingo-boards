@@ -11,22 +11,22 @@ num_users.times do
 end
 
 num_games.times do
-  Game.create(name: Faker::Commerce.product_name, theme: Faker::Team.creature, user_id: num_users)
+  Game.create(name: Faker::Commerce.product_name, theme: Faker::Team.creature, user_id: rand(1..num_users))
 end
 
 80.times do
-  Clue.create(text: Faker::Lorem.paragraph, user_id: num_users, game_id: rand(1..num_games))
+  Clue.create(text: Faker::Lorem.paragraph, pt_value: rand(1..4), game_id: rand(1..num_games))
 end
 
 num_players.times do
 
-	Player.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number)
+	Player.create(name: Faker::Name.name, phone: Faker::PhoneNumber.phone_number)
+end
 
 num_rounds.times do
-	Round.create(random_url: Faker::Internet.domain_word)
-
+	Round.create(random_url: Faker::Internet.domain_word, game_id: rand(1..num_games))
 end
 
 8.times do
-	PlayerRound.create(player_id: rand(num_players), round_id: rand(num_rounds))
+	PlayerRound.create(player_id: rand(1..num_players), round_id: rand(1..num_rounds))
 end

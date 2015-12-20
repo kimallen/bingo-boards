@@ -1,0 +1,18 @@
+
+<h3>Please sign in to choose a game:</h3>
+ 
+ <ul>
+ <h2>Games:</h2>
+<% @games.each do |game| %>
+ 	<% if current_user.id == game.user_id %>
+ 		<li><a href="/games/<%= game.id %>"><%= game.name %></a></li>
+ 		<a href="/games/<%= game.id %>/edit">edit</a>
+ 	<% end %>
+<% end %>
+
+<% @games.each do |game| %>
+	<% if current_user.id != game.user_id %>
+		<li><a href="/games/<%= game.id %>"><%= game.name %></a></li>
+	<% end %>
+<% end %>
+</ul>

@@ -1,6 +1,7 @@
 #INDEX
 get '/games' do
   @games = Game.all
+  erb :'games/index'
 end
 
 #SHOW FORM
@@ -15,7 +16,8 @@ end
 
 #SHOW
 get '/games/:id' do
-
+	@game = Game.find_by(id: params[:id])
+	erb :"/games/show"
 end
 
 #EDIT

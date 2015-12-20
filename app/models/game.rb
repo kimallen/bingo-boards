@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   # takes in an array of clues
   # if there are less than 25 clues
   def generate_board(board_size = 25, clues)
-    clues.shuffle!
+    clues = clues.shuffle
     if clues.length == board_size
       return clues
     else

@@ -4,7 +4,6 @@ class CreateClues < ActiveRecord::Migration
       t.string :text
       t.integer :pt_value
       t.references :game
-      # t.references :user
       t.timestamps
     end
   end
