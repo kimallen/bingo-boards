@@ -9,3 +9,7 @@ table td {
 	border: 1px solid green;
 	padding: 5px;
 }
+
+.error {
+	color: red;
+}
