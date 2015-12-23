@@ -3,6 +3,7 @@
  
  <ul>
  <h2>Games:</h2>
+ <a href='/games/new'><button>Create Game</button></a>
 <% @games.each do |game| %>
  	<% if current_user.id == game.user_id %>
  		<li><a href="/games/<%= game.id %>"><%= game.name %></a></li>

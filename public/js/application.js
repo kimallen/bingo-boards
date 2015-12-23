@@ -1,7 +1,50 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // formListener();
 });
+
+
+var formListener = function(){
+	$('#add_clues').hide();
+	$('.container').on('submit', '#new_game_form', function(e){
+		e.preventDefault();
+
+		//Add new game title and theme to page and remove form
+		var formData = $(this).serialize();
+
+		var request = $.ajax({
+									url: '/games',
+									method: 'post',
+									data: formData
+								})
+
+		request.done(function(response){
+			console.log(response)
+			$('#new_game').prepend(response);
+			$('#add_clues').show();
+			$('#new_game_form').remove();
+		})
+
+	});
+
+	$('#add_clues').hide();
+	$('.container').on('submit', '#new_game_form', function(e){
+		e.preventDefault();
+
+		//Add new game title and theme to page and remove form
+		var formData = $(this).serialize();
+
+		var request = $.ajax({
+									url: '/games',
+									method: 'post',
+									data: formData
+								})
+
+		request.done(function(response){
+			console.log(response)
+			$('#new_game').prepend(response);
+			$('#add_clues').show();
+			$('#new_game_form').remove();
+		})
+
+	});
+}//closes formListener

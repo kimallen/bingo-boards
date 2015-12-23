@@ -1,0 +1,8 @@
+<li><%= clue.text %> <br>Value: <%= clue.pt_value %></li>
+		<% if clue.user.id == current_user.id %>
+			<a href="/games/<%= clue.game.id%>/clues/<%= clue.id%>">Edit</a>
+			<form action='/games/<%= clue.game.id%>/clues' method='post'>
+				<input type='hidden' name='_method' value='delete'>
+				<input type='submit' value='Remove'>
+			</form>
+		<% end %>

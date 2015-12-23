@@ -1,0 +1,15 @@
+<div id='add_clues'>
+		<h5>Now add your clues</h5>
+		<%= flash[:clue_error] %>
+		<form action"/games/">
+			<label>Clue:</label><input type="text" name="text" placeholder="Your clue here">
+			<label>Weighted Value:</label>
+			<select name="pt_value">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<input type="submit" value="Add clue">
+		</form>
+	</div>
