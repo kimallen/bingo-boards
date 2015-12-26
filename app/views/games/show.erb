@@ -1,0 +1,8 @@
+<h1><%= @game.name %></h1>
+<h2><a href="/games/<%= @game.id %>/sample-board">See a sample 5x5 board</a></h2>
+<h3>Your clue list:</h3>
+	<ul>
+	<% @game.clues.each do |clue| %>
+		<li><%= clue.text %> <br>Value: <%= clue.pt_value %></li>
+	<% end %>
+	</ul>

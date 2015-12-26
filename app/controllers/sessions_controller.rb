@@ -9,7 +9,8 @@ post '/login' do
 	
 	if @user && @user.password == params[:password]
 		session[:id] = @user.id
-		redirect "/users/#{@user.id}"
+		redirect "/games"
+		# redirect "/users/#{@user.id}"
 	else
 		flash[:login_error] = "Incorrect email or password"
 		redirect '/login'
