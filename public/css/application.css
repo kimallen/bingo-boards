@@ -13,3 +13,34 @@ table td {
 .error {
 	color: red;
 }
+
+/* base level */
+form input[type="text"],
+form input[type="submit"] {
+		width: 100%;
+} 
+
+/* larger than mobile styles */
+@media screen and (min-width: 480px) {
+	form label {
+		display: inline-block;
+		width: 20%;
+	}
+	form input[type="text"] {
+		width: 70%;
+	}
+	/*body {
+		color: red;
+	}*/
+	form input[type="submit"]{
+		width: auto;
+	}  
+}
+
+/* larger than laptop */
+@media screen and (min-width: 960px) { 
+	form {
+		width: 75%;
+	}
+
+	}

@@ -14,7 +14,7 @@ num_games.times do
   Game.create(name: Faker::Commerce.product_name, theme: Faker::Team.creature, user_id: rand(1..num_users))
 end
 
-80.times do
+50.times do
   Clue.create(text: Faker::Lorem.sentence, pt_value: rand(1..4), game_id: rand(1..num_games))
 end
 
