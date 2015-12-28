@@ -29,8 +29,7 @@ var formListener = function(){
 	// show form on game page; append new clue to game page
 	$('#add_clues').on('submit', '#add_clues_form', function(e){
 		e.preventDefault();
-		debugger
-		//Add new game title and theme to page and remove form
+		
 		var formData = $(this).serialize();
 		var route = $(this).attr('action')
 		var request = $.ajax({
@@ -40,8 +39,8 @@ var formListener = function(){
 								})
 
 		request.done(function(response){
-			console.log(response)
 			$('#clue_list').prepend(response);
+			document.getElementById("add_clues_form").reset();			
 		})
 
 	});

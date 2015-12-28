@@ -2,7 +2,7 @@
 <h2>Theme: <%= @game.theme %></h2>
 <h2><a href="/games/<%= @game.id %>/sample-board">See a sample 5x5 board</a></h2>
 <h3>Your clue list:</h3>
-	<%= erb :"/clues/new" %>
+	<%= erb :"/clues/_new" %>
 	<ul id='clue_list'>
 	<% @game.clues.reverse.each do |clue| %>
 		<li><%= clue.text %> <br>Value: <%= clue.pt_value %></li>
