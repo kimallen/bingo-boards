@@ -1,15 +1,20 @@
 
 <h3>Please sign in to choose a game:</h3>
  
- <ul>
  <h2>Games:</h2>
+ <ul>
+ <h3>By you:</h3>
+ <a href='/games/new'><button>Create Game</button></a>
 <% @games.each do |game| %>
  	<% if current_user.id == game.user_id %>
  		<li><a href="/games/<%= game.id %>"><%= game.name %></a></li>
  		<a href="/games/<%= game.id %>/edit">edit</a>
  	<% end %>
 <% end %>
+</ul>
 
+<ul>
+<h3>By others</h3>
 <% @games.each do |game| %>
 	<% if current_user.id != game.user_id %>
 		<li><a href="/games/<%= game.id %>"><%= game.name %></a></li>

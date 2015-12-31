@@ -3,6 +3,8 @@ class Game < ActiveRecord::Base
   belongs_to :user
   has_many :rounds
 
+  validates :name, presence: true
+  validates :theme, presence: true
 
   # takes in an array of clues
   # if there are less than 25 clues
