@@ -1,4 +1,4 @@
-require 'Faker'
+# require 'faker'
 
 num_users = 1
 num_players = 5
