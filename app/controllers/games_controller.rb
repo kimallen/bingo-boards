@@ -10,8 +10,23 @@ get '/games/new' do
 end
 #CREATE
 post '/games' do
+  
   @game = Game.new(params[:game])
-
+ #  if request.xhr?
+	#   if @game.save
+	#   	erb :_new_game_layout, layout: false, locals: {game: @game}
+	#   else
+	#   	flash[:error] = "Try again"
+	#   	# redirect '/games/new'
+	#   end
+	# else
+		if @game.save
+			redirect "/games/#{@game.id}"
+		else
+	  	flash[:error] = "Try again"
+			redirect '/games/new'
+		end
+	# end
 end
 
 #SHOW
