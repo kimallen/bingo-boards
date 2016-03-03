@@ -1,4 +1,5 @@
 # bingo-boards
+Built in Ruby/Sinatra (note: this app is being transferred and continued as a Rails app called scavenger-bingo)
 
 This app will allow a user to create a bingo board using self-chosen grid statements for a 25 square grid.  
 The game is a bit like "I spy" using a bingo board and can be used at different events or settings.  
